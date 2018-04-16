@@ -1,13 +1,14 @@
 /*****************************************************************
 **                                                              **
-**                        Títol:Velocitat 8 LEDs                **
+**                        Títol:                                **
 **          Posar nom representatiu del programa                **
 **                                                              **
-** NOM:Martin Herranz Cruz                     Data:11/04/2018  **
+** NOM:Martin Herranz Cruz                     Data:29/01/2018  **
 *****************************************************************/
-//********** Includes *************************************************************
+//****************************INCLUDE*****************************
 
-//********** Variables ************************************************************
+
+//***************************VARIABLES****************************
 const int led0 = 5;          // donar nom al pin 5 de l’Arduino
 const int led1 = 6;          // donar nom al pin 6 de l’Arduino
 const int led2 = 7;          // donar nom al pin 7 de l’Arduino
@@ -21,9 +22,9 @@ const int pot0 = A0;         // donar nom al pin A0 de l’Arduino
 int velocitat = 20;          // velocitat de l'acció en ms
 int valPot0;                 // guardar valor del poyenciometre
 
-//********** Setup ****************************************************************
-void setup()
-{
+//*****************************SETUP******************************
+
+void setup() {                 //Configura el final de salida
   pinMode(led0, OUTPUT);     // definir el pin 5 com una sortida
   pinMode(led1, OUTPUT);     // definir el pin 6 com una sortida
   pinMode(led2, OUTPUT);     // definir el pin 7 com una sortida
@@ -34,10 +35,14 @@ void setup()
   pinMode(led7, OUTPUT);     // definir el pin 12 com una sortida
 }
 
-//********** Loop *****************************************************************
-void loop()
-{
-  valPot0 = analogRead(pot0);   // llegir valor del potenciòmetre
+
+
+
+
+//******************************LOOP******************************
+
+void loop() {                 //Inicia el bucle del programa
+ valPot0 = analogRead(pot0);   // llegir valor del potenciòmetre
   velocitat = valPot0;     // actualitzar velocitat amb el valor del potenciòmetre
   
   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
@@ -61,6 +66,8 @@ void loop()
   digitalWrite(led7, HIGH);    // posar a 5V el pin 12
   
   delay(velocitat);            // es queden leds vrlocitat ms en aquest estat
+
+
 }
 
-//********** Funcions *************************************************************
+//****************************FUNCIONS****************************
